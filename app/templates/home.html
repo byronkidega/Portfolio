@@ -4,27 +4,24 @@
 
 {% block content %}
 <!-- Main Content -->
-<div class="container">
+<div class="container" id="fixed-header">
     <h1>Idea | Design | Development</h1>
 </div>
 
 <hr>
 
-    <div class="introduction">
-        <h2>Byron Douglas Kidega</h3>
+<div class="introduction" id="introduction">
+    <h2>Byron Douglas Kidega</h3>
         <h4>System Developer</h4>
         <p style="font-size: 1.6rem;">
             I specialize in backend development for web-based application systems. I have hands-on experience building robust and scalable applications using Flask and FastAPI. My work emphasizes secure user authentication, database integration, and efficient workflow solutions tailored to meet project requirements.
         </p>
         <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile Picture" class="profile-image">
-    </div>
+</div>
 
-
-
-
-
-<div class="skills">
+<div class="skills" id="skills">
     <h2 style="color: white; font-weight: bold; font-size: 2.5rem; text-align: center; margin-bottom: 20px; padding: 0px;">Skills</h2>
+    <!-- Skills content -->
     <div class="skills-columns">
         <div>
             <div>
@@ -83,18 +80,13 @@
 </div>
 
 <div class="sections">
-    <div class="current_projects">
+    <div class="current_projects" id="current-projects">
         <h2>Current Projects</h2>
-        <h4></h4>
-        <p>
-            N/A
-        </p>
+        <p>N/A</p>
     </div>
-
-    
-
-    <div class="accomplishments">
+    <div class="accomplishments" id="accomplishments">
         <h2>Accomplishments</h2>
+        <!-- Accomplishments content -->
         <h4>Case Management System</h4>
         <p>
             This is a web-based case management system developed with Flask, SQLAlchemy, and SQLite, providing role-based access control and robust user authentication. The auth.py module handles user registration, login, role-based redirects, analysis of uploaded reports and detailed logging of activities conducted within the system, supporting an environment with distinct roles like viewer, investigative_officer, admin, and super_user.
@@ -107,58 +99,70 @@
 
 <hr>
 
-    <div class="contact_detail mt-4">
-        <h3>Contact Detail</h3>
-        <div class="d-flex justify-content-center">
-            Docker: <a href="https://hub.docker.com/u/byronkidega82" target="_blank" style="color: black;">docker/byronkidega82</a>
-        </div>
-        <div class="d-flex justify-content-center">
-            GitHub: <a href="https://github.com/byronkidega" target="_blank" style="color: black;">github/byronkidega</a>
-        </div>
-        <div class="d-flex justify-content-center">
-            Email: byronkidega82@gmail.com
-        </div>
-        <div class="d-flex justify-content-center">
-            Telephone: +256789062614
-        </div>
+<div class="contact_detail mt-4" id="contact">
+    <h3>Contact Detail</h3>
+    <!-- Contact details -->
+    <div class="d-flex justify-content-center">
+        Docker: <a href="https://hub.docker.com/u/byronkidega82" target="_blank" style="color: black;">docker/byronkidega82</a>
     </div>
+    <div class="d-flex justify-content-center">
+        GitHub: <a href="https://github.com/byronkidega" target="_blank" style="color: black;">github/byronkidega</a>
+    </div>
+    <div class="d-flex justify-content-center">
+        Email: byronkidega82@gmail.com
+    </div>
+    <div class="d-flex justify-content-center">
+        Telephone: +256789062614
+    </div>
+</div>
 
-    <script>
-        document.addEventListener("scroll", () => {
-            const container = document.querySelector(".container");
-            if (window.scrollY > 50) { // Adjust threshold as needed
-                container.classList.add("scrolled");
-            } else {
-                container.classList.remove("scrolled");
+<script>
+    // Array to track sections and their IDs
+    const sections = [
+        { id: "skills", name: "Skills" },
+        { id: "current-projects", name: "Projects" },
+        { id: "accomplishments", name: "Current Projects | Accomplishments" },
+        { id: "contact", name: "Contact" }
+    ];
+
+    const header = document.getElementById("fixed-header");
+    const defaultHeaderText = "Idea | Design | Development";
+
+    window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+        let activeSection = defaultHeaderText;
+
+        sections.forEach(section => {
+            const element = document.getElementById(section.id);
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                const elementTop = rect.top + window.scrollY;
+                const elementBottom = elementTop + element.offsetHeight;
+
+                if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
+                    activeSection = section.name;
+                }
             }
         });
-    </script>
+
+        header.querySelector("h1").textContent = activeSection;
+    });
+</script>
+
+<script>
+    document.addEventListener("scroll", () => {
+        const container = document.querySelector(".container");
+        if (window.scrollY > 50) { // Adjust threshold as needed
+            container.classList.add("scrolled");
+        } else {
+            container.classList.remove("scrolled");
+        }
+    });
+</script>
 
 <style>
-    .container {
-        position: fixed; /* Fixes the container on the screen */
-        top: 0; /* Positions the container at the top */
-        width: 100%; /* Ensures it spans the full width of the viewport */
-        color: rgb(223, 171, 93);
-        text-align: center;
-        font-size: 1.3rem;
-        background: rgb(53, 87, 75);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-        z-index: 1000; /* Ensures it stays above other content */
-        transition: transform 0.3s ease-in-out, background 0.3s ease-in-out; /* Smooth transitions */
-    }
-
-    /* Optional: Change background on scroll */
-    body {
-        scroll-behavior: smooth; /* Enables smooth scrolling for the page */
-    }
-
-    /* Adds smooth background transition effect */
-    .container.scrolled {
-        background: rgb(46, 46, 46);
-        color: white;
-    }
-
+    /* Existing styles */
     .introduction {
         color: white;
         text-align: center;
@@ -195,6 +199,7 @@
             gap: 20px;
             max-width: 60%;
             margin: 0 auto; /* Centers the section */
+            margin-bottom: 15px;
         }
     
         .skills-columns > div {
@@ -232,17 +237,23 @@
     .sections {
         display: flex; /* Enables horizontal alignment */
         justify-content: space-between; /* Distributes sections evenly */
-        margin-top: 20px;
+        max-width: 95%;
+        margin: auto;
+        background: rgb(31, 36, 43);
+        border-radius: 15px; /* Rounded corners */
+        padding: 20px;
+        margin-bottom: 15px;
     }
 
     .sections > div {
         flex: 1; /* Makes each section take equal width */
         background: rgb(100, 108, 117);
-        padding: 10px;
         color: black;
         text-align: center;
         font-size: 1.3rem;
         margin: auto;
+        border-radius: 15px; /* Rounded corners */
+        padding: 20px;
     }
 
 
@@ -274,6 +285,24 @@
         max-width: 30%;
         margin: auto;
         border-radius: 15px;
+    }
+
+    .container {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        color: rgb(223, 171, 93);
+        text-align: center;
+        font-size: 1.3rem;
+        background: rgb(53, 87, 75);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: background 0.3s ease-in-out;
+    }
+
+    .container.scrolled {
+        background: rgb(46, 46, 46);
+        color: white;
     }
 </style>
 {% endblock %}
