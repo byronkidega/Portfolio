@@ -1,6 +1,6 @@
 # Byron Douglas Kidega's Portfolio
 
-Welcome to my portfolio! This project showcases my skills, accomplishments, and ongoing projects as a backend developer specializing in web-based application systems. The portfolio is built using Flask, HTML, CSS, and Bootstrap for responsive design and interactivity.
+Welcome to my portfolio! This showcases my skills, accomplishments, and ongoing projects as a backend developer specializing in web-based application systems. The portfolio is built using Flask, HTML, CSS, Bootstrap, and some JavaScripts for responsive design and interactivity.
 
 ## Table of Contents
 
@@ -8,10 +8,7 @@ Welcome to my portfolio! This project showcases my skills, accomplishments, and 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
-- [Screenshots](#screenshots)
 - [Contributing](#contributing)
-- [License](#license)
-
 ---
 
 ## About the Portfolio
@@ -27,8 +24,7 @@ This portfolio highlights:
 - **Skills Section**: Displays my technical skills in three-column newspaper format.
 - **Current Projects**: Detailed descriptions of ongoing projects, such as a case management system.
 - **Accomplishments**: Key achievements with links to live projects or repositories.
-- **Responsive Design**: Built with Bootstrap to ensure a great experience on all devices.
-- **Role-Based Content**: Navigation and content vary based on user roles like `viewer`, `investigative_officer`, `admin`, and `super_user`.
+- **Responsive Design**: Built with Bootstrap, JavaScripts to ensure a great experience on all devices.
 
 ## Technologies Used
 
@@ -45,6 +41,6 @@ To run this portfolio locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
-   cd portfolio
+   git clone https://github.com/yourusername/Portfolio.git
+   cd Portfolio
 # portfolio
