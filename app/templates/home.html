@@ -123,15 +123,40 @@
         </div>
     </div>
 
-
+    <script>
+        document.addEventListener("scroll", () => {
+            const container = document.querySelector(".container");
+            if (window.scrollY > 50) { // Adjust threshold as needed
+                container.classList.add("scrolled");
+            } else {
+                container.classList.remove("scrolled");
+            }
+        });
+    </script>
 
 <style>
     .container {
-        padding: 5px;
+        position: fixed; /* Fixes the container on the screen */
+        top: 0; /* Positions the container at the top */
+        width: 100%; /* Ensures it spans the full width of the viewport */
         color: rgb(223, 171, 93);
         text-align: center;
-        font-size: 1.5rem;
-        background: rgb(53, 87, 75)
+        font-size: 1.3rem;
+        background: rgb(53, 87, 75);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+        z-index: 1000; /* Ensures it stays above other content */
+        transition: transform 0.3s ease-in-out, background 0.3s ease-in-out; /* Smooth transitions */
+    }
+
+    /* Optional: Change background on scroll */
+    body {
+        scroll-behavior: smooth; /* Enables smooth scrolling for the page */
+    }
+
+    /* Adds smooth background transition effect */
+    .container.scrolled {
+        background: rgb(46, 46, 46);
+        color: white;
     }
 
     .introduction {
@@ -143,7 +168,7 @@
         background: black;
         padding: 10px;
         border-radius: 15px;
-        margin-top: 20px;
+        margin-top: 100px;
         background: linear-gradient(145deg, rgb(46, 46, 46), rgb(0, 0, 0));
         border: 1px solid #ccc;
         box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.6), 
