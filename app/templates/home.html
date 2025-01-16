@@ -12,11 +12,11 @@
 
 <div class="introduction" id="introduction">
     <h2>Byron Douglas Kidega</h3>
+        <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile Picture" class="profile-image">
         <h4>System Developer</h4>
         <p style="font-size: 1.6rem;">
             I specialize in backend development for web-based application systems. I have hands-on experience building robust and scalable applications using Flask and FastAPI. My work emphasizes secure user authentication, database integration, and efficient workflow solutions tailored to meet project requirements.
         </p>
-        <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile Picture" class="profile-image">
 </div>
 
 <div class="skills" id="skills">
@@ -99,14 +99,12 @@
 
 <hr>
 
-<div class="contact_detail mt-4" id="contact">
-    <h3>Contact Detail</h3>
+<h3 style="color: white; font-weight: bold; text-align: center; font-size: 2.5rem; margin: 10px;">Contact Detail</h3>
+
+<div class="contact_detail" id="contact">
     <!-- Contact details -->
     <div class="d-flex justify-content-center">
-        Docker: <a href="https://hub.docker.com/u/byronkidega82" target="_blank" style="color: black;">docker/byronkidega82</a>
-    </div>
-    <div class="d-flex justify-content-center">
-        GitHub: <a href="https://github.com/byronkidega" target="_blank" style="color: black;">github/byronkidega</a>
+        GitHub: <a href="https://github.com/byronkidega" target="_blank" style="color: white;">github/byronkidega</a>
     </div>
     <div class="d-flex justify-content-center">
         Email: byronkidega82@gmail.com
@@ -120,7 +118,7 @@
     // Array to track sections and their IDs
     const sections = [
         { id: "skills", name: "Skills" },
-        { id: "current-projects", name: "Projects" },
+        { id: "current-projects", name: "Current Projects | Accomplishments" },
         { id: "accomplishments", name: "Current Projects | Accomplishments" },
         { id: "contact", name: "Contact" }
     ];
@@ -181,13 +179,10 @@
     }
 
     .profile-image {
-        width: 175px; /* Adjust size as needed */
-        height: 175px;
+        width: 150px; /* Adjust size as needed */
+        height: 150px;
         border-radius: 50%; /* Makes the image circular */
         object-fit: cover;
-        position: absolute;
-        right: 20px; /* Distance from the right edge */
-        top: 20px; /* Distance from the top edge */
         border: 3px solid white; /* Optional: Adds a border around the image */
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
     }
@@ -259,6 +254,7 @@
 
     .current_projects {
         max-width: 30%; /* Restricts the maximum width */
+        margin-bottom: 15px;
     }
 
     .accomplishments {
@@ -276,15 +272,15 @@
     }
 
     .contact_detail {
-        padding: 5px;
+        padding: 15px;
         color: white;
-        font-weight: bold;
         font-size: 1.8rem;
         text-align: center;
-        background: rgb(87, 75, 60);
-        max-width: 30%;
+        background: rgb(48, 27, 2);
+        max-width: 50%;
         margin: auto;
         border-radius: 15px;
+        margin-bottom: 25px;
     }
 
     .container {

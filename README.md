@@ -41,6 +41,6 @@ To run this portfolio locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Portfolio.git
-   cd Portfolio
+   git clone https://github.com/byronkidega/portfolio.git
+   cd portfolio
 # portfolio
