@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block content %}
+<!-- Main Content -->
+<div class="container">
+    <h1>Idea | Design | Development</h1>
+</div>
+
+<hr>
+
+    <div class="introduction">
+        <h2>Byron Douglas Kidega</h3>
+        <h4>Python Developer</h4>
+        <p style="font-size: 1.6rem;">
+            I specialize in backend development for web-based application systems. I have hands-on experience building robust and scalable applications using Flask and FastAPI. My work emphasizes secure user authentication, database integration, and efficient workflow solutions tailored to meet project requirements.
+        </p>
+    </div>
+
+
+
+
+
+<div class="skills">
+    <h2 style="color: white; font-weight: bold; font-size: 2.5rem; text-align: center; margin-bottom: 20px; padding: 0px;">Skills</h2>
+    <div class="skills-columns">
+        <div>
+            <div>
+                <h4>Programming Languages & Frameworks</h4>
+                <ul>
+                    <li>Python</li>
+                    <li>Flask</li>
+                    <li>FastAPI</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Web Development</h4>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Bootstrap</li>
+                    <li>Basic JavaScript</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h4>Database Management</h4>
+                <ul>
+                    <li>SQLite</li>
+                    <li>Database design and query optimization</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Version Control</h4>
+                <ul>
+                    <li>Git & GitHub</li>
+                    <li>Versioning strategies and commit management</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h4>Deployment</h4>
+                <ul>
+                    <li>Docker</li>
+                    <li>Deployment of system builds</li>
+                    <li>System and feature updates</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Other Tools</h4>
+                <ul>
+                    <li>Visual Studio Code</li>
+                    <li>Task automation with Flask integrations</li>
+                    <li>Linux-based deployment configurations</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sections">
+    <div class="current_projects">
+        <h2>Current Projects</h2>
+        <h4></h4>
+        <p>
+            N/A
+        </p>
+    </div>
+
+    
+
+    <div class="accomplishments">
+        <h2>Accomplishments</h2>
+        <h4>Case Management System</h4>
+        <p>
+            This is a web-based case management system developed with Flask, SQLAlchemy, and SQLite, providing role-based access control and robust user authentication. The auth.py module handles user registration, login, role-based redirects, analysis of uploaded reports and detailed logging of activities conducted within the system, supporting an environment with distinct roles like viewer, investigative_officer, admin, and super_user.
+            <br>
+            <br>
+            Link: <a href="https://hub.docker.com/r/byronkidega82/case_management_system/tags" target="_blank">Docker Build</a>
+        </p>
+    </div>
+</div>
+
+<hr>
+
+    <div class="contact_detail mt-4">
+        <h3>Contact Detail</h3>
+        <div class="d-flex justify-content-center">
+            Docker: <a href="https://hub.docker.com/u/byronkidega82" target="_blank" style="color: black;">docker/byronkidega82</a>
+        </div>
+        <div class="d-flex justify-content-center">
+            GitHub: <a href="https://github.com/byronkidega" target="_blank" style="color: black;">github/byronkidega</a>
+        </div>
+        <div class="d-flex justify-content-center">
+            Email: byronkidega82@gmail.com
+        </div>
+        <div class="d-flex justify-content-center">
+            Telephone: +256789062614
+        </div>
+    </div>
+
+
+
+<style>
+    .container {
+        padding: 5px;
+        color: white;
+        text-align: center;
+        font-size: 1.5rem;
+        background: rgb(53, 87, 75)
+    }
+
+    .introduction {
+        color: white;
+        text-align: center  ;
+        font-size: 1.8rem;
+        max-width: 60%; /* Restricts the maximum width */
+        margin: auto;    
+    }
+
+
+        .skills-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 60%;
+            margin: 0 auto; /* Centers the section */
+        }
+    
+        .skills-columns > div {
+            flex: 1 1 calc(33.333% - 20px); /* Creates three equal-width columns */
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Adds space between the frames in each column */
+        }
+    
+        .skills-columns > div > div {
+            background: linear-gradient(145deg, rgb(223, 223, 223), rgb(100, 99, 99)); /* Subtle gradient for 3D effect */
+            border-radius: 15px; /* Rounded corners */
+            padding: 10px; /* Spacing inside the frames */
+            border: 1px solid #ccc; /* Optional: Adds a border for definition */
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), 
+                        -4px -4px 8px rgba(255, 255, 255, 0.6); /* 3D shadow effect */
+            color: black;
+            font-size: 1.3rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth animation */
+        }
+    
+        /* Hover effect for interactivity */
+        .skills-columns > div > div:hover {
+            transform: translateY(-5px); /* Slight lift effect on hover */
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), 
+                        -6px -6px 12px rgba(160, 159, 159, 0.8); /* Enhanced shadow on hover */
+        }
+    
+        @media screen and (max-width: 768px) {
+            .skills-columns > div {
+                flex: 1 1 100%; /* Stacks the columns vertically on smaller screens */
+            }
+        }
+
+    .sections {
+        display: flex; /* Enables horizontal alignment */
+        justify-content: space-between; /* Distributes sections evenly */
+        margin-top: 20px;
+    }
+
+    .sections > div {
+        flex: 1; /* Makes each section take equal width */
+        background: rgb(100, 108, 117);
+        padding: 10px;
+        color: black;
+        text-align: center;
+        font-size: 1.3rem;
+        margin: auto;
+    }
+
+
+    .current_projects {
+        max-width: 30%; /* Restricts the maximum width */
+    }
+
+    .accomplishments {
+        max-width: 30%; /* Restricts the maximum width */
+    }
+
+    @media screen and (max-width: 1024px) {
+        .sections {
+            flex-direction: column; /* Stacks sections vertically on smaller screens */
+        }
+
+        .sections > div {
+            max-width: 100%; /* Makes sections take full width */
+        }
+    }
+
+    .contact_detail {
+        padding: 5px;
+        color: white;
+        font-weight: bold;
+        font-size: 1.8rem;
+        text-align: center;
+        background: rgb(63, 37, 4);
+    }
+</style>
+{% endblock %}
