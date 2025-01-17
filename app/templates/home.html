@@ -8,23 +8,20 @@
     <h1>Idea | Design | Development</h1>
 </div>
 
-<hr>
-
 <div class="introduction" id="introduction">
     <h2>Byron Douglas Kidega</h3>
         <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile Picture" class="profile-image">
         <h4>System Developer</h4>
         <p style="font-size: 1.6rem;">
-            I specialize in backend development for web-based application systems. I have hands-on experience building robust and scalable applications using Flask and FastAPI. My work emphasizes secure user authentication, database integration, and efficient workflow solutions tailored to meet project requirements.
+            I specialize in backend development for web-based application systems. I have hands-on experience building robust & scalable systems using Flask & FastAPI. My work emphasizes secure user authentication, secure system routes & functionalities, secure & smooth database integration, and efficient workflow solutions tailored to meet project requirements.
         </p>
 </div>
 
 <div class="skills" id="skills">
     <h2 style="color: white; font-weight: bold; font-size: 2.5rem; text-align: center; margin-bottom: 20px; padding: 0px;">Skills</h2>
-    <!-- Skills content -->
     <div class="skills-columns">
         <div>
-            <div>
+            <div class="skill-frame" title="Details about Python, Flask, FastAPI" data-skill="Python: Advanced programming language for backend development. Flask: A micro-framework for web applications. FastAPI: A framework for building APIs with Python.">
                 <h4>Programming Languages & Frameworks</h4>
                 <ul>
                     <li>Python</li>
@@ -32,7 +29,7 @@
                     <li>FastAPI</li>
                 </ul>
             </div>
-            <div>
+            <div class="skill-frame" title="Details about HTML, CSS, Bootstrap, JavaScript" data-skill="HTML, CSS, and JavaScript: Core web technologies. Bootstrap: Framework for responsive designs.">
                 <h4>Web Development</h4>
                 <ul>
                     <li>HTML</li>
@@ -43,14 +40,14 @@
             </div>
         </div>
         <div>
-            <div>
+            <div class="skill-frame" title="Details about SQLite and query optimization" data-skill="SQLite: Lightweight database for small-scale applications. Includes expertise in query optimization and schema design.">
                 <h4>Database Management</h4>
                 <ul>
                     <li>SQLite</li>
                     <li>Database design and query optimization</li>
                 </ul>
             </div>
-            <div>
+            <div class="skill-frame" title="Details about Git and GitHub" data-skill="Git: Version control system for tracking changes. GitHub: Platform for collaboration and repository management.">
                 <h4>Version Control</h4>
                 <ul>
                     <li>Git & GitHub</li>
@@ -59,7 +56,7 @@
             </div>
         </div>
         <div>
-            <div>
+            <div class="skill-frame" title="Details about Docker and deployments" data-skill="Docker: Containerization for scalable deployments. Includes handling feature updates and system builds.">
                 <h4>Deployment</h4>
                 <ul>
                     <li>Docker</li>
@@ -67,7 +64,7 @@
                     <li>System and feature updates</li>
                 </ul>
             </div>
-            <div>
+            <div class="skill-frame" title="Details about VS Code and Linux configurations" data-skill="VS Code: Integrated development environment for coding. Linux: Configuration for secure and optimized deployments.">
                 <h4>Other Tools</h4>
                 <ul>
                     <li>Visual Studio Code</li>
@@ -76,6 +73,13 @@
                 </ul>
             </div>
         </div>
+    </div>
+</div>
+
+<div id="modal" class="hidden">
+    <div id="modal-content">
+        <span id="close-modal"></span>
+        <p id="skill-details"></p>
     </div>
 </div>
 
@@ -89,7 +93,7 @@
         <!-- Accomplishments content -->
         <h4>Case Management System</h4>
         <p>
-            This is a web-based case management system developed with Flask, SQLAlchemy, and SQLite, providing role-based access control and robust user authentication. The auth.py module handles user registration, login, role-based redirects, analysis of uploaded reports and detailed logging of activities conducted within the system, supporting an environment with distinct roles like viewer, investigative_officer, admin, and super_user.
+            This is a web-based system developed with Flask, SQLAlchemy, and SQLite, providing role-based access control & robust user authentication. The different python modules and routes handles user registration, login, role-based redirects, analysis of uploaded reports & detailed logging of system activities, supporting an environment with distinct roles like Viewers, Investigative Officers, Admin, and Super User.
             <br>
             <br>
             Link: <a href="https://hub.docker.com/r/byronkidega82/case_management_system/tags" target="_blank">Docker Build</a>
@@ -159,6 +163,47 @@
     });
 </script>
 
+<script>
+    document.querySelectorAll('.skill-frame').forEach(frame => {
+        frame.addEventListener('click', () => {
+            const skillDetails = frame.getAttribute('data-skill');
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modal-content');
+            const detailsElement = document.getElementById('skill-details');
+    
+            detailsElement.textContent = skillDetails;
+            modal.classList.add('visible');
+            modalContent.style.animation = 'flip-in 0.6s ease forwards'; // Trigger flip-in animation
+            document.body.classList.add('modal-open');
+        });
+    });
+    
+    document.getElementById('close-modal').addEventListener('click', () => {
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+    
+        modalContent.style.animation = 'flip-out 0.6s ease forwards'; // Trigger flip-out animation
+        setTimeout(() => {
+            modal.classList.remove('visible');
+            document.body.classList.remove('modal-open');
+        }, 600); // Match timeout to animation duration
+    });
+    
+    window.addEventListener('click', (e) => {
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+    
+        if (e.target === modal) {
+            modalContent.style.animation = 'flip-out 0.6s ease forwards'; // Trigger flip-out animation
+            setTimeout(() => {
+                modal.classList.remove('visible');
+                document.body.classList.remove('modal-open');
+            }, 600); // Match timeout to animation duration
+        }
+    });
+    
+</script>
+
 <style>
     /* Existing styles */
     .introduction {
@@ -170,7 +215,7 @@
         background: black;
         padding: 10px;
         border-radius: 15px;
-        margin-top: 100px;
+        margin-top: 130px;
         background: linear-gradient(145deg, rgb(46, 46, 46), rgb(0, 0, 0));
         border: 1px solid #ccc;
         box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.6), 
@@ -188,46 +233,123 @@
     }
 
 
-        .skills-columns {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            max-width: 60%;
-            margin: 0 auto; /* Centers the section */
-            margin-bottom: 15px;
-        }
+    .skills-columns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 60%;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
     
-        .skills-columns > div {
-            flex: 1 1 calc(33.333% - 20px); /* Creates three equal-width columns */
-            display: flex;
-            flex-direction: column;
-            gap: 10px; /* Adds space between the frames in each column */
-        }
+    .skills-columns > div {
+        flex: 1 1 calc(33.333% - 20px);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
     
-        .skills-columns > div > div {
-            background: linear-gradient(145deg, rgb(133, 133, 133), rgb(53, 53, 53)); /* Subtle gradient for 3D effect */
-            border-radius: 15px; /* Rounded corners */
-            padding: 10px; /* Spacing inside the frames */
-            border: 1px solid #ccc; /* Optional: Adds a border for definition */
-            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), 
-                        -4px -4px 8px rgba(255, 255, 255, 0.6); /* 3D shadow effect */
-            color: black;
-            font-size: 1.3rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth animation */
-        }
+    .skill-frame {
+        background: linear-gradient(145deg, rgb(133, 133, 133), rgb(53, 53, 53));
+        border-radius: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), 
+                    -4px -4px 8px rgba(255, 255, 255, 0.6);
+        color: black;
+        font-size: 1.4rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+    }
     
-        /* Hover effect for interactivity */
-        .skills-columns > div > div:hover {
-            transform: translateY(-5px); /* Slight lift effect on hover */
-            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), 
-                        -6px -6px 12px rgba(160, 159, 159, 0.8); /* Enhanced shadow on hover */
-        }
+    .skill-frame:hover {
+        transform: translateY(-5px);
+        box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), 
+                    -6px -6px 12px rgba(160, 159, 159, 0.8);
+    }
     
-        @media screen and (max-width: 768px) {
-            .skills-columns > div {
-                flex: 1 1 100%; /* Stacks the columns vertically on smaller screens */
-            }
+    /* Modal Container */
+    #modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1000px; /* Enable 3D space */
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+    
+    #modal.visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    body.modal-open {
+        overflow: hidden;
+    }
+    
+    /* Modal Content with Flip Animation */
+    #modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 80%;
+        max-width: 500px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transform: rotateY(90deg); /* Start flipped */
+        animation: flip-in 0.6s ease forwards;
+    }
+    
+    #modal-content p {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    
+    #modal-content #close-modal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    
+    /* Flip Animations */
+    @keyframes flip-in {
+        0% {
+            transform: rotateY(90deg);
+            opacity: 0;
         }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            transform: rotateY(0deg);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes flip-out {
+        0% {
+            transform: rotateY(0deg);
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            transform: rotateY(90deg);
+            opacity: 0;
+        }
+    }
 
     .sections {
         display: flex; /* Enables horizontal alignment */
@@ -236,7 +358,7 @@
         margin: auto;
         background: rgb(31, 36, 43);
         border-radius: 15px; /* Rounded corners */
-        padding: 20px;
+        padding: 25px;
         margin-bottom: 15px;
     }
 
@@ -245,7 +367,7 @@
         background: rgb(100, 108, 117);
         color: black;
         text-align: center;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         margin: auto;
         border-radius: 15px; /* Rounded corners */
         padding: 20px;
@@ -254,11 +376,18 @@
 
     .current_projects {
         max-width: 30%; /* Restricts the maximum width */
-        margin-bottom: 15px;
+        background: linear-gradient(145deg, rgb(46, 46, 46), rgb(0, 0, 0));
+        border: 1px solid #ccc;
+        box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.6), 
+                    -4px -4px 8px rgba(255, 255, 255, 0.1);
     }
 
     .accomplishments {
         max-width: 30%; /* Restricts the maximum width */
+        background: linear-gradient(145deg, rgb(46, 46, 46), rgb(0, 0, 0));
+        border: 1px solid #ccc;
+        box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.6), 
+                    -4px -4px 8px rgba(255, 255, 255, 0.1);
     }
 
     @media screen and (max-width: 1024px) {
