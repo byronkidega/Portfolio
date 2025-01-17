@@ -90,15 +90,28 @@
     </div>
     <div class="accomplishments" id="accomplishments">
         <h2>Accomplishments</h2>
-        <!-- Accomplishments content -->
-        <h4>Case Management System</h4>
-        <p>
-            This is a web-based system developed with Flask, SQLAlchemy, and SQLite, providing role-based access control & robust user authentication. The different python modules and routes handles user registration, login, role-based redirects, analysis of uploaded reports & detailed logging of system activities, supporting an environment with distinct roles like Viewers, Investigative Officers, Admin, and Super User.
-            <br>
-            <br>
-            Link: <a href="https://hub.docker.com/r/byronkidega82/case_management_system/tags" target="_blank">Docker Build</a>
-        </p>
+        <div class="project-slider-container">
+            <div class="project-slider active">
+                <h4>1. Case Management System</h4>
+                <p>
+                    This is a web-based system developed with Flask, SQLAlchemy, and SQLite, providing role-based access control & robust user authentication. The different python modules and routes handle user registration, login, role-based redirects, analysis of uploaded reports & detailed logging of system activities, supporting an environment with distinct roles like Viewers, Investigative Officers, Admin, and Super User.
+                    <br>
+                    <br>
+                    Link: <a href="https://hub.docker.com/r/byronkidega82/case_management_system/tags" target="_blank">Docker Build</a>
+                </p>
+            </div>
+            <div class="project-slider">
+                <h4>2. Portfolio</h4>
+                <p>
+                    This showcases my skills, accomplishments, and ongoing projects as a backend developer specializing in web-based application systems. The portfolio is built using Flask, HTML, CSS, Bootstrap, and some JavaScript for responsive design and interactivity.
+                    <br>
+                    <br>
+                    Link: <a href="https://hub.docker.com/r/byronkidega82/case_management_system/tags" target="_blank">Docker Build</a>
+                </p>
+            </div>
+        </div>
     </div>
+    
 </div>
 
 <hr>
@@ -200,6 +213,28 @@
                 document.body.classList.remove('modal-open');
             }, 600); // Match timeout to animation duration
         }
+    });
+    
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const sliders = document.querySelectorAll(".project-slider");
+        let currentIndex = 0;
+    
+        function showNextSlider() {
+            // Hide the current slider
+            sliders[currentIndex].classList.remove("active");
+    
+            // Move to the next slider (or loop back to the start)
+            currentIndex = (currentIndex + 1) % sliders.length;
+    
+            // Show the next slider
+            sliders[currentIndex].classList.add("active");
+        }
+    
+        // Set an interval to switch between sliders
+        setInterval(showNextSlider, 3000); // Change every 3 seconds
     });
     
 </script>
@@ -388,6 +423,16 @@
         border: 1px solid #ccc;
         box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.6), 
                     -4px -4px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    .project-slider {
+        display: none;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .project-slider.active {
+        display: block;
+        opacity: 1;
     }
 
     @media screen and (max-width: 1024px) {
