@@ -4,7 +4,13 @@
 
 {% block content %}
 <!-- Main Content -->
-
+<div class="container" id="fixed-header" style="top: 55px; ">
+    <!-- Left Button Link -->
+    <a href="/current_projects" id="left-button" class="header-link">Ongoing Projects</a>
+    
+    <!-- Right Button Link -->
+    <a href="/accomplishments" id="right-button" class="header-link">Accomplishments</a>
+</div>
 
 <div class="introduction" id="introduction">
     <h2>Byron Douglas Kidega</h3>
@@ -202,6 +208,42 @@
 
 <style>
     /* Existing styles */
+    
+    /* Styling for the link buttons */
+    .header-link {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-decoration: none;
+        background-color: rgb(223, 171, 93);
+        color: rgb(0, 0, 0);
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.3rem;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .header-link:hover {
+        background-color: rgb(200, 150, 80);
+    }
+    
+    /* Position the left link */
+    #left-button {
+        left: 120px;
+    }
+    
+    /* Position the right link */
+    #right-button {
+        right: 120px;
+    }
+
+    .container.scrolled .header-link {
+        color: white;
+        background-color: rgb(46, 46, 46);
+    }
+
     .introduction {
         color: white;
         text-align: center;
