@@ -4,9 +4,7 @@
 
 {% block content %}
 <!-- Main Content -->
-<div class="container" id="fixed-header">
-    <h1>Idea | Design | Development</h1>
-</div>
+
 
 <div class="introduction" id="introduction">
     <h2>Byron Douglas Kidega</h3>
@@ -40,14 +38,14 @@
             </div>
         </div>
         <div>
-            <div class="skill-frame" title="Details about SQLite and query optimization" data-skill="SQLite: Lightweight database for small-scale applications. Includes expertise in query optimization and schema design.">
+            <div class="skill-frame" title="Details about SQLite and query optimization" data-skill="SQLite: Lightweight database for small-scale applications, query optimization and schema design.">
                 <h4>Database Management</h4>
                 <ul>
                     <li>SQLite</li>
                     <li>Database design and query optimization</li>
                 </ul>
             </div>
-            <div class="skill-frame" title="Details about Git and GitHub" data-skill="Git: Version control system for tracking changes. GitHub: Platform for collaboration and repository management.">
+            <div class="skill-frame" title="Details about Git and GitHub" data-skill="Git: Version control system for tracking development stages. GitHub: Platform for collaboration and repository management.">
                 <h4>Version Control</h4>
                 <ul>
                     <li>Git & GitHub</li>
@@ -56,7 +54,7 @@
             </div>
         </div>
         <div>
-            <div class="skill-frame" title="Details about Docker and deployments" data-skill="Docker: Containerization for scalable deployments. Includes handling feature updates and system builds.">
+            <div class="skill-frame" title="Details about Docker and deployments" data-skill="Docker's containerization streamlines deployment, enables seamless updates, and supports scalable architectures, making it a powerful tool for modern application management. Paired with orchestration tools, it enhances reliability and efficiency in complex systems.">
                 <h4>Deployment</h4>
                 <ul>
                     <li>Docker</li>
@@ -100,7 +98,7 @@
             <div class="project-slider active">
                 <h4>1. Case Management System</h4>
                 <p>
-                    This is a web-based system developed with Flask, SQLAlchemy, and SQLite, providing role-based access control & robust user authentication. The different python modules and routes handle user registration, login, role-based redirects, analysis of uploaded reports & detailed logging of system activities, supporting an environment with distinct roles like Viewers, Investigative Officers, Admin, and Super User.
+                    This is a web-based system developed with Flask, SQLAlchemy, and SQLite, providing role-based access control & robust user authentication. The different python modules and routes handle user registration, login, role-based redirects, analysis of uploaded reports & detailed logging of system activities, supporting an environment with distinct roles like Viewers, Investigative Officers, Admin, & Super User.
                     <br>
                     <br>
                     Link: <a href="https://hub.docker.com/r/byronkidega82/case_management_system/tags" target="_blank">Docker Build</a>
@@ -123,12 +121,11 @@
 <hr>
 
 <div class="contact_section">
-    <h3 style="color: white; font-weight: bold; text-align: center; font-size: 2.5rem; margin: 10px;">Contact Detail</h3>
-
     <div class="contact_detail" id="contact">
+        <h3 style="color: white; font-weight: bold; text-align: center; font-size: 2.2rem; margin: 0;">Contact Detail</h3>
         <!-- Contact details -->
-         <p style="max-width: 50%; background: rgba(31, 15, 7); padding: 5px; margin: auto; border-radius: 25px; box-shadow: 4px 4px 8px rgba(92, 92, 92, 0.6), 
-                    -4px -4px 8px rgba(255, 255, 255, 0.1);">
+         <p style="max-width: 50%; background: rgba(31, 15, 7); padding: 10px; margin: auto; border-radius: 25px; box-shadow: 4px 4px 8px rgba(92, 92, 92, 0.6), 
+                    -4px -4px 8px rgba(255, 255, 255, 0.1); margin-top: 10px; background: linear-gradient(145deg, rgb(43, 33, 28), rgb(14, 7, 4));">
             GitHub: <a href="https://github.com/byronkidega" target="_blank" style="color: white;">github/byronkidega</a>
             <br>
             Email: byronkidega82@gmail.com
@@ -138,50 +135,7 @@
     </div>
 </div>
 
-<script>
-    // Array to track sections and their IDs
-    const sections = [
-        { id: "skills", name: "Skills" },
-        { id: "current-projects", name: "Current Projects | Accomplishments" },
-        { id: "accomplishments", name: "Current Projects | Accomplishments" },
-        { id: "contact", name: "Contact" }
-    ];
 
-    const header = document.getElementById("fixed-header");
-    const defaultHeaderText = "Idea | Design | Development";
-
-    window.addEventListener("scroll", () => {
-        const scrollPosition = window.scrollY + window.innerHeight / 2;
-
-        let activeSection = defaultHeaderText;
-
-        sections.forEach(section => {
-            const element = document.getElementById(section.id);
-            if (element) {
-                const rect = element.getBoundingClientRect();
-                const elementTop = rect.top + window.scrollY;
-                const elementBottom = elementTop + element.offsetHeight;
-
-                if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
-                    activeSection = section.name;
-                }
-            }
-        });
-
-        header.querySelector("h1").textContent = activeSection;
-    });
-</script>
-
-<script>
-    document.addEventListener("scroll", () => {
-        const container = document.querySelector(".container");
-        if (window.scrollY > 50) { // Adjust threshold as needed
-            container.classList.add("scrolled");
-        } else {
-            container.classList.remove("scrolled");
-        }
-    });
-</script>
 
 <script>
     document.querySelectorAll('.skill-frame').forEach(frame => {
@@ -241,7 +195,7 @@
         }
     
         // Set an interval to switch between sliders
-        setInterval(showNextSlider, 3000); // Change every 3 seconds
+        setInterval(showNextSlider, 5000); // Change every 5 seconds
     });
     
 </script>
@@ -310,88 +264,7 @@
                     -6px -6px 12px rgba(160, 159, 159, 0.8);
     }
     
-    /* Modal Container */
-    #modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        perspective: 1000px; /* Enable 3D space */
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
-    }
-    
-    #modal.visible {
-        opacity: 1;
-        pointer-events: auto;
-    }
-    
-    body.modal-open {
-        overflow: hidden;
-    }
-    
-    /* Modal Content with Flip Animation */
-    #modal-content {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        width: 80%;
-        max-width: 500px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        transform-style: preserve-3d;
-        backface-visibility: hidden;
-        transform: rotateY(90deg); /* Start flipped */
-        animation: flip-in 0.6s ease forwards;
-    }
-    
-    #modal-content p {
-        font-size: 1.5rem;
-        margin: 0;
-    }
-    
-    #modal-content #close-modal {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 1.2rem;
-        cursor: pointer;
-    }
-    
-    /* Flip Animations */
-    @keyframes flip-in {
-        0% {
-            transform: rotateY(90deg);
-            opacity: 0;
-        }
-        50% {
-            opacity: 0.5;
-        }
-        100% {
-            transform: rotateY(0deg);
-            opacity: 1;
-        }
-    }
-    
-    @keyframes flip-out {
-        0% {
-            transform: rotateY(0deg);
-            opacity: 1;
-        }
-        50% {
-            opacity: 0.5;
-        }
-        100% {
-            transform: rotateY(90deg);
-            opacity: 0;
-        }
-    }
+
 
     .sections {
         display: flex; /* Enables horizontal alignment */
@@ -455,17 +328,18 @@
     .contact_detail {
         padding: 15px;
         color: white;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         text-align: center;
-        background: rgb(48, 27, 2);
+        background: rgb(36, 35, 35);
         max-width: 70%;
         margin: auto;
-        border-radius: 15px;
+        border-radius: 20px;
         margin-bottom: 25px;
+        margin-top: 25px;
     }
 
     .contact_section {
-        background: rgb(70, 56, 37);
+        background: rgb(71, 71, 71);
         padding: 3px;
         border-radius: 25px;
         max-width: 90%;
@@ -473,22 +347,6 @@
         text-align: center;
     }
 
-    .container {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        color: rgb(223, 171, 93);
-        text-align: center;
-        font-size: 1.3rem;
-        background: rgb(53, 87, 75);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        transition: background 0.3s ease-in-out;
-    }
 
-    .container.scrolled {
-        background: rgb(46, 46, 46);
-        color: white;
-    }
 </style>
 {% endblock %}

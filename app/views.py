@@ -7,17 +7,6 @@ def home():
     return render_template('home.html')
 
 
-@views.route('/skills')
-def skills():
-    skills_data = [
-        {"name": "Python", "level": "Intermediate"},
-        {"name": "Flask", "level": "Intermediate"},
-        {"name": "SQLite", "level": "Intermediate"},
-        {"name": "HTML/CSS", "level": "Intermediate"},
-        {"name": "Bootstrap", "level": "Intermediate"},
-    ]
-    return render_template('skills.html', skills=skills_data)
-
 @views.route('/current_projects')
 def current_projects():
     projects_data = [
@@ -50,6 +39,38 @@ def accomplishments():
     ]
     return render_template('accomplishments.html', accomplishments=accomplishments_data)
 
+
+@views.route("/portfolio")
+def portfolio():
+    portfolio_data = [
+    "Developed a fully functional role-based authentication system.",
+    "Designed optimized database schemas for efficient data storage.",
+    "Integrated user-friendly templates with advanced navigation features.",
+    "Maintained a comprehensive Git commit history for all projects.",
+    ]
+    return render_template('portfolio.html', portfolio=portfolio_data)
+
+
+@views.route("/case_management_system")
+def case_management_system():
+    case_management_system_data = [
+    "Developed a fully functional role-based authentication system.",
+    "Designed optimized database schemas for efficient data storage.",
+    "Integrated user-friendly templates with advanced navigation features.",
+    "Maintained a comprehensive Git commit history for all projects.",
+    ]
+    return render_template('case_management_system.html', case_management_system=case_management_system_data)
+
+@views.route("/git_tracking_system")
+def git_tracking_system():
+    git_data = [
+    "Developed a fully functional role-based authentication system.",
+    "Designed optimized database schemas for efficient data storage.",
+    "Integrated user-friendly templates with advanced navigation features.",
+    "Maintained a comprehensive Git commit history for all projects.",
+    ]
+    return render_template('git_tracking_system.html', git_tracking_system=git_data)
+    
 
 
 
