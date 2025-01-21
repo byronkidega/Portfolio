@@ -1,7 +1,160 @@
 {% extends "base.html" %}
 
-{% block title %}Accomplishments{% endblock %}
+{% block title %}Case Management System{% endblock %}
 
 {% block content %}
+<div style="margin-top: 120px; margin-bottom: 0; color: white; font-size: 1.5rem; text-align: left;">
+    <h2>Accomplishments / Case Management System</h2>
+</div>
+<hr>
+<div class="accomplishments">
+    <h3 style="color: rgb(89, 156, 255); font-weight: bold; font-size: 1.8rem;">Flask Case Management System</h3>
+    <hr>
 
+    <h3>Overview</h3>
+    <p>
+        This project is a web-based case management system developed with Flask, SQLAlchemy, and SQLite. It provides 
+        role-based access control and robust user authentication. The <code>auth.py</code> module handles user 
+        registration, login, role-based redirects, analysis of uploaded reports, and detailed logging of activities 
+        conducted within the system. It supports distinct roles like <strong>Viewer</strong>, 
+        <strong>Investigative Officer</strong>, <strong>Admin</strong>, and <strong>Super User</strong>.
+    </p>
+    <hr>
+
+    <h3>Main Features</h3>
+    <ul>
+        <li><strong>User Authentication:</strong> Login with role-based access control.</li>
+        <li><strong>File Uploads:</strong> Upload reports and case files with metadata.</li>
+        <li><strong>Search Reports:</strong> Search reports by reference number or case name.</li>
+        <li><strong>Report Reference Number:</strong> Automatically generated for each report.</li>
+        <li><strong>Analytical Dashboard:</strong> Augmented Intelligence for trend analysis of uploaded reports.</li>
+        <li><strong>Admin Features:</strong> Manage users, view deactivated user logs, and more.</li>
+        <li><strong>Soft Deletion:</strong> Soft delete users and retain their data for auditing.</li>
+        <li><strong>Audit Logs:</strong> Track user deletions and system events.</li>
+        <li><strong>Excel Export Functions:</strong> Export logs and reports to Excel files.</li>
+    </ul>
+    <hr>
+
+    <h3>User Registration and Role-Based Activities</h3>
+    <p>
+        <strong>Authentication and Authorization:</strong><br>
+        Using Flask-Login, users are authenticated and assigned roles, allowing for role-based redirection and content 
+        access restriction. Only authorized users can view certain pages or perform specific actions.
+    </p>
+    <ul>
+        <li><strong>Validation:</strong> Validate user signup input such as name length, email uniqueness, and password strength.</li>
+        <li><strong>Password Encryption:</strong> User-entered passwords are encrypted using Flask’s <code>generate_password_hash</code>.</li>
+        <li><strong>Role Validation:</strong> Ensure users can only select authorized roles.</li>
+        <li><strong>Role-Based Redirects:</strong> Users are redirected to appropriate pages according to their roles.</li>
+    </ul>
+    <hr>
+
+    <h3>Monitoring and Logging</h3>
+    <p>
+        The application logs critical activities, including:
+    </p>
+    <ul>
+        <li><strong>Deleted Reports:</strong> Tracks reports deleted by investigative officers.</li>
+        <li><strong>User List:</strong> Lists active users with relevant metadata.</li>
+        <li><strong>Deactivated Users:</strong> Lists deactivated users with details of the deactivator.</li>
+        <li><strong>Reactivated Users:</strong> Lists reactivated users with details of the reactivator.</li>
+    </ul>
+    <hr>
+
+    <h3>File and Database Management</h3>
+    <ul>
+        <li><strong>SQLite Database:</strong> SQLAlchemy ORM is used for database interactions, offering protection against SQL injection.</li>
+        <li><strong>File Storage:</strong> Uploaded files are stored securely with unique filenames derived from reference numbers, ensuring integrity.</li>
+    </ul>
+    <hr>
+
+    <h3>Security Features</h3>
+    <ul>
+        <li><strong>Password Hashing:</strong> User passwords are hashed before storage using <code>SHA256</code> with <code>generate_password_hash</code>.</li>
+        <li><strong>Role-Based Access Control:</strong> Access is restricted based on user roles.</li>
+        <li><strong>Input Validation:</strong> Protect against SQL injection and input-based attacks.</li>
+        <li><strong>CSRF Protection:</strong> Built-in Flask CSRF protection is enabled on forms.</li>
+    </ul>
+    <hr>
+
+    <h3>Setup and Installation</h3>
+    <h4>Prerequisites</h4>
+    <p>- Docker</p>
+    <h4>Installation Steps</h4>
+    <ol>
+        <li><strong>Clone Docker Repository:</strong> This system can easily be set up using Docker.</li>
+        <li>Ensure you have a Docker Hub Account!</li>
+    </ol>
+    <p>
+        <code>
+        docker login<br>
+        docker pull byronkidega82/case_management_app:v1.2.1<br>
+        docker run -d -p 5000:5000 --restart always --name case_management_app byronkidega82/case_management_app:v1.2.1
+        </code>
+    </p>
+</div>
+
+<div class="button-container">
+    <a href="{{ url_for('views.accomplishments') }}" class="btn btn-outline-primary btn-md btn-3d" style="color: white;">Go Back</a>
+    <a href="http://127.0.0.1:5000" target="_blank" class="btn btn-outline-primary btn-md me-8 btn-3d" style="color: white;">Live Demo</a>
+    <a href="{{ url_for('views.home') }}" class="btn btn-outline-primary btn-md btn-3d" style="color: white;">Home</a>
+</div>
+
+<style>
+    .accomplishments {
+        max-height: 540px; /* Adjust max height as needed */
+        overflow-y: auto;
+        color: white;
+        text-align: left;
+        font-size: 1.2rem;
+        max-width: 70%;
+        margin: auto;
+        margin-top: 20px;
+        background: linear-gradient(145deg, rgb(46, 46, 46), rgb(0, 0, 0));
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid #ccc;
+        box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.6), 
+                    -4px -4px 8px rgba(255, 255, 255, 0.1);
+    }
+    .accomplishments h3, .accomplishments h4 {
+        color: #ffcc00;
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+    }
+    .accomplishments ul, .accomplishments ol {
+        margin-left: 20px;
+    }
+
+    /* Enhanced 3D Button Styles for the main buttons */
+    .btn-3d {
+        text-decoration: none;
+        background-color: rgb(73, 72, 72);
+        font-weight: bold;
+        padding: 10px 20px; /* Keep padding consistent */
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Default shadow for 3D effect */
+        transition: transform 0.1s ease, box-shadow 0.2s ease;
+        border: none; /* Remove default border */
+    }
+
+    .btn-3d:hover {
+        transform: translateY(-4px); /* Elevate button on hover */
+        background-color: rgb(95, 0, 0);
+        color: white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+    }
+
+    .btn-3d:active {
+        transform: translateY(1px); /* Button presses down on click */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Restore default shadow */
+    }
+
+    .button-container {
+        margin-top: 20px; /* Adjust as needed */
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+</style>
 {% endblock %}
