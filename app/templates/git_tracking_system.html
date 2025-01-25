@@ -3,5 +3,147 @@
 {% block title %}Git Tracking System{% endblock %}
 
 {% block content %}
+<div style="margin-top: 120px; margin-bottom: 0; color: white; font-size: 1.5rem; text-align: left;">
+    <h2>Current Projects / GitHub Tracker</h2>
+</div>
+<hr>
+<div class="current_projects">
+    <h3 style="color: rgb(89, 156, 255); font-weight: bold; font-size: 1.8rem;">GitHub Tracker System</h3>
+    <hr>
 
+    <h3>Overview</h3>
+    <p>
+        A web-based tool designed to track repository activity, analyze contributor performance, and visualize project progress. Built using Flask, GitHub API, and Chart.js, this system simplifies Git project management.
+    </p>
+    <hr>
+
+    <h3>Table of Contents</h3>
+    <ul>
+        <li><a href="#about-the-system" style="color: #ffcc00;">About the System</a></li>
+        <li><a href="#features" style="color: #ffcc00;">Features</a></li>
+        <li><a href="#technologies-used" style="color: #ffcc00;">Technologies Used</a></li>
+        <li><a href="#setup-and-installation" style="color: #ffcc00;">Setup and Installation</a></li>
+        <li><a href="#contributing" style="color: #ffcc00;">Contributing</a></li>
+    </ul>
+    <hr>
+
+    <h3 id="about-the-system">About the System</h3>
+    <p>This system highlights:</p>
+    <ul>
+        <li>Repository Management: Connect, list, and fetch details of repositories.</li>
+        <li>Commit Tracking: Visualize commit history and analyze trends.</li>
+        <li>Branch Management: Display branch activity and contributors.</li>
+        <li>Contributor Analysis: Track contributions by user.</li>
+        <li>Issue Tracking: Monitor open/closed issues with labels and assignees.</li>
+        <li>Visualization: Generate graphs for various metrics.</li>
+        <li>Notifications: Alerts for updates (commits, pull requests, issues).</li>
+    </ul>
+    <hr>
+
+    <h3 id="features">Features</h3>
+    <ul>
+        <li><strong>Introduction Section:</strong> Repository Management.</li>
+        <li><strong>Skills Section:</strong> Commit Tracking.</li>
+        <li><strong>Current Projects:</strong> Branch Management.</li>
+        <li><strong>Accomplishments:</strong> Contributor Analysis.</li>
+        <li><strong>Responsive Design:</strong> Issue Tracking.</li>
+        <li><strong>Accomplishments:</strong> Visualization.</li>
+        <li><strong>Responsive Design:</strong> Notifications.</li>
+    </ul>
+    <hr>
+
+    <h3 id="technologies-used">Technologies Used</h3>
+    <ul>
+        <li><strong>Languages:</strong> Python, HTML, CSS</li>
+        <li><strong>Frontend:</strong> HTML, CSS, BootStrap</li>
+        <li><strong>Frameworks:</strong> Flask, GitHub API (REST/GraphSQL)</li>
+        <li><strong>Database:</strong> SQLite upgradeable to PostgreSQL/MySQL</li>
+        <li><strong>Version Control:</strong> Git & GitHub</li>
+        <li><strong>Deployment Tools:</strong> Docker</li>
+        <li><strong>IDE:</strong> Visual Studio Code</li>
+    </ul>
+    <hr>
+
+    <h3 id="setup-and-installation">Setup and Installation</h3>
+    <p>To run this system locally:</p>
+    <ol>
+        <li>Clone the git repository:
+            <pre style="background: #333; color: #ffcc00; padding: 10px; border-radius: 5px;">
+git clone https://github.com/byronkidega/GitHub_Tracker.git
+cd GitHub_Tracker
+            </pre>
+        </li>
+        <li>Follow the README file for further instructions.</li>
+    </ol>
+    <hr>
+
+    <h3 id="contributing">Contributing</h3>
+    <p>
+        Contributions are welcome! Please fork the repository and submit a pull request for any suggestions or improvements.
+    </p>
+</div>
+
+
+<div class="button-container">
+    <a href="{{ url_for('views.accomplishments') }}" class="btn btn-outline-primary btn-lg btn-3d" style="color: white;">Go Back</a>
+    <a href="{{ url_for('views.home') }}" class="btn btn-outline-primary btn-lg btn-3d" style="color: white;">Home</a>
+</div>
+
+<style>
+    .current_projects {
+        max-height: 540px; /* Adjust max height as needed */
+        overflow-y: auto;
+        color: white;
+        text-align: left;
+        font-size: 1.4rem;
+        max-width: 70%;
+        margin: auto;
+        margin-top: 20px;
+        background: linear-gradient(145deg, rgb(46, 46, 46), rgb(0, 0, 0));
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid #ccc;
+        box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.6), 
+                    -4px -4px 8px rgba(255, 255, 255, 0.1);
+    }
+    .current_projects h3, .current_projects h4 {
+        color: #ffcc00;
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+    }
+    .current_projects ul, .current_projects ol {
+        margin-left: 20px;
+    }
+
+    /* Enhanced 3D Button Styles for the main buttons */
+    .btn-3d {
+        text-decoration: none;
+        background-color: rgb(73, 72, 72);
+        font-weight: bold;
+        padding: 10px 20px; /* Keep padding consistent */
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Default shadow for 3D effect */
+        transition: transform 0.1s ease, box-shadow 0.2s ease;
+        border: none; /* Remove default border */
+    }
+
+    .btn-3d:hover {
+        transform: translateY(-4px); /* Elevate button on hover */
+        background-color: rgb(95, 0, 0);
+        color: white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+    }
+
+    .btn-3d:active {
+        transform: translateY(1px); /* Button presses down on click */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Restore default shadow */
+    }
+
+    .button-container {
+        margin-top: 20px; /* Adjust as needed */
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+</style>
 {% endblock %}

@@ -8,7 +8,7 @@
 </div>
 <hr>
 <div class="accomplishments">
-    <h3 style="color: rgb(89, 156, 255); font-weight: bold; font-size: 1.8rem;">Flask Case Management System</h3>
+    <h3 style="color: rgb(89, 156, 255); font-weight: bold; font-size: 1.8rem;">Case Management System</h3>
     <hr>
 
     <h3>Overview</h3>
@@ -85,19 +85,31 @@
         <li><strong>Clone Docker Repository:</strong> This system can easily be set up using Docker.</li>
         <li>Ensure you have a Docker Hub Account!</li>
     </ol>
+    <ol>
+        <li>Pull the docker build:
+            <pre style="background: #333; color: #ffcc00; padding: 10px; border-radius: 5px;">
+docker login
+docker pull byronkidega/case_management_system:v1.2.1
+docker run -d -p 5000:5000 --restart always --name case_management_system byronkidega82/case_management_system:v1.2.1
+            </pre>
+        </li>
+        <li>Clone the git repository and follow the README file for further instructions.</li>
+        <pre style="background: #333; color: #ffcc00; padding: 10px; border-radius: 5px;">
+git clone https://github.com/byronkidega/case_management_system.git
+cd case_management_system
+        </pre>
+    </ol>
+
+    <h3 id="contributing">Contributing</h3>
     <p>
-        <code>
-        docker login<br>
-        docker pull byronkidega82/case_management_app:v1.2.1<br>
-        docker run -d -p 5000:5000 --restart always --name case_management_app byronkidega82/case_management_app:v1.2.1
-        </code>
+        Contributions are welcome! Please fork the repository and submit a pull request for any suggestions or improvements.
     </p>
 </div>
 
 <div class="button-container">
-    <a href="{{ url_for('views.accomplishments') }}" class="btn btn-outline-primary btn-md btn-3d" style="color: white;">Go Back</a>
-    <a href="http://127.0.0.1:5000" target="_blank" class="btn btn-outline-primary btn-md me-8 btn-3d" style="color: white;">Live Demo</a>
-    <a href="{{ url_for('views.home') }}" class="btn btn-outline-primary btn-md btn-3d" style="color: white;">Home</a>
+    <a href="{{ url_for('views.accomplishments') }}" class="btn btn-outline-primary btn-lg btn-3d" style="color: white;">Go Back</a>
+    <a href="http://127.0.0.1:5000" target="_blank" class="btn btn-outline-primary btn-lg me-8 btn-3d" style="color: white;">Live Demo</a>
+    <a href="{{ url_for('views.home') }}" class="btn btn-outline-primary btn-lg btn-3d" style="color: white;">Home</a>
 </div>
 
 <style>
@@ -106,7 +118,7 @@
         overflow-y: auto;
         color: white;
         text-align: left;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         max-width: 70%;
         margin: auto;
         margin-top: 20px;

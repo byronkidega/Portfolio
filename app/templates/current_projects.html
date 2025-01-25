@@ -3,5 +3,69 @@
 {% block title %}Current Projects{% endblock %}
 
 {% block content %}
+<div style="margin-top: 150px; color: white; font-size: 1.8rem; text-align: center;">
+    <h2>Current Projects</h3>
+</div>
+<hr>
+<div class="current_projects">
+    <!-- Centered buttons below tables -->
+    <div>
+    <div>
+        <a href="{{ url_for('views.git_tracking_system') }}" class="btn btn-secondary me-5 btn-3d" style="background: rgba(77, 77, 77, 0.6); color: white;">Git Tracking System</a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="d-flex justify-content-left mt-4">
+        <a href="{{ url_for('views.home') }}" class="btn btn-outline-primary btn-lg me-4 btn-3d" style="color: white;">Return Home</a>
+    </div>
+</div>
 
+
+
+
+<style>
+    /* Existing styles */
+    .current_projects {
+        max-height: 1000px;
+        color: white;
+        text-align: center;
+        font-size: 1.5rem;
+        max-width: 60%;
+        margin: auto;
+        margin-top: 20px;
+        background: black;
+        padding: 50px;
+        border-radius: 15px;
+        background: linear-gradient(145deg, rgb(46, 46, 46), rgb(0, 0, 0));
+        border: 1px solid #ccc;
+        box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.6), 
+                    -4px -4px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Enhanced 3D Button Styles for the main buttons */
+    .btn-3d {
+        text-decoration: none;
+
+        font-weight: bold;
+        padding: 10px 20px; /* Keep padding consistent */
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Default shadow for 3D effect */
+        transition: transform 0.1s ease, box-shadow 0.2s ease;
+        border: none; /* Remove default border */
+    }
+
+    .btn-3d:hover {
+        transform: translateY(-4px); /* Elevate button on hover */
+        background-color: rgb(83, 46, 0);
+        color: black;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+    }
+
+    .btn-3d:active {
+        transform: translateY(1px); /* Button presses down on click */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Restore default shadow */
+    }
+</style>
 {% endblock %}
